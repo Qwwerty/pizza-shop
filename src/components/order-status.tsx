@@ -17,23 +17,23 @@ const orderStatusMap: Record<OrderStatus, string> = {
   processing: 'Em preparo',
 }
 
-export function OrderStatus({ status }: OrderStatusProps) {
+export function OrderStatus({ status, ...rest }: OrderStatusProps) {
   return (
     <div className="flex items-center gap-2">
       {status === 'pending' && (
-        <span className="h-2 w-2 rounded-full bg-slate-400" />
+        <span className="h-2 w-2 rounded-full bg-slate-400" {...rest} />
       )}
 
       {status === 'canceled' && (
-        <span className="h-2 w-2 rounded-full bg-rose-500" />
+        <span className="h-2 w-2 rounded-full bg-rose-500" {...rest} />
       )}
 
       {status === 'delivered' && (
-        <span className="h-2 w-2 rounded-full bg-emerald-500" />
+        <span className="h-2 w-2 rounded-full bg-emerald-500" {...rest} />
       )}
 
       {['processing', 'delivering'].includes(status) && (
-        <span className="h-2 w-2 rounded-full bg-amber-500" />
+        <span className="h-2 w-2 rounded-full bg-amber-500" {...rest} />
       )}
 
       <span className="font-medium text-muted-foreground">
