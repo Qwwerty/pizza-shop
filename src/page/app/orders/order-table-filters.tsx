@@ -35,7 +35,7 @@ export function OrderTableFilters() {
       defaultValues: {
         orderId: orderId ?? '',
         customerName: customerName ?? '',
-        status: status ?? '',
+        status: status ?? 'all',
       },
     })
 
